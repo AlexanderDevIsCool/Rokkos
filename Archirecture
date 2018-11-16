@@ -1,0 +1,52 @@
+Product{
+    name : string
+    description : string
+    color : string
+    add_time : datetime
+    sale_price : string
+}
+
+Tags {
+    product_id
+    tag1, : string
+    ...
+    tagN.
+}
+
+Post{
+    deliver_id
+    recipient_id
+    product_id
+    time_out : datetime
+    time_in : datetime
+    delivery_type : string
+    delivered : boolean
+}
+
+Recipien { 
+    email : string
+    password : string bycrypt
+    number : string
+    address : string
+    recipient_name : string
+    birthday : date
+    sex : string
+    secret_question : string
+}
+
+Recipient_and_product
+recipient_id
+product_id
+
+Sclad{
+    prodcut_id
+    price : string
+    opt_price : string
+    clear_price : string 
+    kilkist : int
+}
+    
+    
+
+
+    
