@@ -1,8 +1,7 @@
 Product{
     name : string
     description : string
-    color : string
-    add_time : datetime
+    photography : string
     sale_price : string
 }
 
