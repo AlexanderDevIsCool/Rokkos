@@ -22,9 +22,19 @@ Post{
     delivered : boolean
 }
 
+User {
+email : string
+password : string bycrypt
+number : string
+address : string
+name : string
+birthdat : date
+sex : string
+secret_question : string
+}
+
 Recipien { 
     email : string
-    password : string bycrypt
     number : string
     address : string
     recipient_name : string
