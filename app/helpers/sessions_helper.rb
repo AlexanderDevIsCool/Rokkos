@@ -7,6 +7,12 @@ module SessionsHelper
     !current_user.nil?
   end
 
+  def logged_in_and_admin?
+    if logged_in?
+      current_user.admin?
+    end
+  end
+
   def remember(user)
     user.remember
     cookies.permanent.signed[:user_id] = user.id
