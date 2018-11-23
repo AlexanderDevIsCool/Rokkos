@@ -1,25 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<div class="back"><%= link_to(image_tag('backbtn.png',height: '100px',width:'100px'),products_path) %></div>
+<div id="productname">  <%= @product.name %> </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
 
-<p>
-  <strong>Image:</strong>
-  <%= link_to(image_tag(@product.image.thumb.url, alt: 'Image'),
-              @product.image.url, target: '_blank') %>
-</p>
 
-<p>
-  <strong>Sale price:</strong>
-  <%= @product.sale_price %>
-</p>
+<div id="productpicture"> <%= link_to(image_tag(@product.image.thumb.url, alt: 'Image'),
+                                      @product.image.url, target: '_blank') %>
+</div><div id="productprice">  <%= @product.sale_price %></div>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+
+<form id="buy-form">
+
+  Кількість
+  <input id="number" type="number" name="quantity" min="1" max="1000" value="1">
+  <input id="buy-btn" type="button" onclick="" name="buy" value="Купити">
+</form>
+
+
+<div class="clear"></div>
+
+<div class="group">Description</div>
+<div class="productpics"> <%= link_to(image_tag(@product.image.thumb.url, alt: 'Image'),
+                                      @product.image.url, target: '_blank') %></div>
+<div class="productpics"> <%= link_to(image_tag(@product.image.thumb.url, alt: 'Image'),
+                                      @product.image.url, target: '_blank') %></div>
+<div class="productpics"> <%= link_to(image_tag(@product.image.thumb.url, alt: 'Image'),
+                                      @product.image.url, target: '_blank') %></div>
+<div class="productpics"> <%= link_to(image_tag(@product.image.thumb.url, alt: 'Image'),
+                                      @product.image.url, target: '_blank') %></div>
+
+
+
+<div id="description"> <%= @product.description %></div>
+
+<% if logged_in_and_admin? %>
+<%= link_to 'Edit', edit_product_path(@product) %>
+  <% end %>
+
