@@ -2,45 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e668068-0f9e-4c0e-a570-40b5d813bff2" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/HeaderBG.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/Layer 1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/Layer 2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/Layer 3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/RokkosHeader.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/RokkosHeaderBg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/Untitled-6.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/backbtn.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/black.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/brown.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/darktexture.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/dashed_bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/footer_bottom_bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/footer_h3_bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/footer_middle_bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/footer_top_bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/header.jpg-1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/header.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/headerlogo.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/item.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/lightbrown.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/login.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/logo.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/assets/images/strapo_leather_cable_organizer_300x300.jpg" />
-      <change beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change beforePath="$PROJECT_DIR$/.idea/Rokkos.iml" afterPath="$PROJECT_DIR$/.idea/Rokkos.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/products.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/products.scss" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/products/index.html.erb" afterPath="$PROJECT_DIR$/app/views/products/index.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/products/show.html.erb" afterPath="$PROJECT_DIR$/app/views/products/show.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/sessions/new.html.erb" afterPath="$PROJECT_DIR$/app/views/sessions/new.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_form.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/new.html.erb" afterPath="$PROJECT_DIR$/app/views/users/new.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -93,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+            <state relative-caret-position="495">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -113,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="products.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/products.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="88" column="21" lean-forward="false" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+            <state relative-caret-position="315">
+              <caret line="168" column="0" lean-forward="true" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -519,12 +482,12 @@
       <workItem from="1542920331906" duration="4425000" />
       <workItem from="1542971304593" duration="4633000" />
       <workItem from="1542989477656" duration="1266000" />
-      <workItem from="1542993287336" duration="12235000" />
+      <workItem from="1542993287336" duration="12945000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73507000" />
+    <option name="totallyTimeSpent" value="74217000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="784" y="0" width="1602" height="873" extended-state="6" />
@@ -873,14 +836,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/products/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -889,10 +844,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/products.scss">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="88" column="21" lean-forward="false" selection-start-line="88" selection-start-column="21" selection-end-line="88" selection-end-column="21" />
+        <state relative-caret-position="495">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -919,10 +874,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/_footer.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        <state relative-caret-position="0">
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/products.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="168" column="0" lean-forward="true" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
           <folding />
         </state>
       </provider>
