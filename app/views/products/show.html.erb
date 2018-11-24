@@ -9,16 +9,22 @@
                                       @product.image.url, target: '_blank') %>
 </div><div id="productprice">  <%= @product.sale_price %></div>
 
-
-<form id="buy-form">
-
+<%= form_tag(new_order_path(order:{
+                product_id: @product.id, user_id: current_user.id}),
+             method: :get,id: "buy-form") do %>
   Кількість
-  <input id="number" type="number" name="quantity" min="1" max="1000" value="1">
-  <input id="buy-btn" type="button" onclick="" name="buy" value="Купити">
-</form>
+  <%= number_field_tag("number",
+                 min: "1", max: "1000")%>
+  <%= button_tag("Купити", id: "buy-btn",
+                 onclick: "", name: "buy")%>
+
+  <%= link_to "BUY", new_order_path(order:{
+      product_id: @product.id, user_id: current_user.id}) %>
+<% end %>
 
 
 <div class="clear"></div>
+
 
 <div class="group">Description</div>
 <div class="productpics"> <%= link_to(image_tag(@product.image.thumb.url, alt: 'Image'),

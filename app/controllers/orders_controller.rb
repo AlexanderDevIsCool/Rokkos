@@ -15,6 +15,8 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @order = Order.new
+    @user = User.find_by(id: new_order_params[:user_id])
+    @product = Product.find_by(id: new_order_params[:product_id])
   end
 
   # GET /orders/1/edit
@@ -69,6 +71,10 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:fullname, :city, :mobile, :email)
+      params.require(:order).permit(:full_name, :city, :mobile, :email)
+    end
+
+    def new_order_params
+      params.require(:order).permit(:product_id, :user_id)
     end
 end

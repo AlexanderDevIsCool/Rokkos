@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Orders</h1>
+  <%if @orders %>
 
-<table>
-  <thead>
+  <table>
+    <thead>
     <tr>
       <th>Fullname</th>
       <th>City</th>
@@ -11,13 +12,12 @@
       <th>Email</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+    </thead>
 
-  <tbody>
-  <%if @orders %>
+    <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.fullname %></td>
+        <td><%= order.full_name %></td>
         <td><%= order.city %></td>
         <td><%= order.mobile %></td>
         <td><%= order.email %></td>
@@ -26,9 +26,12 @@
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+
+    </tbody>
+  </table>
+
   <% end %>
-  </tbody>
-</table>
+
 
 <br>
 

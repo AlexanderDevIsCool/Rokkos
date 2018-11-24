@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   has_many :desires
+  has_many :orders
   has_many :products, :through => :desires
 
   attr_accessor :remember_token, :activation_token, :reset_token

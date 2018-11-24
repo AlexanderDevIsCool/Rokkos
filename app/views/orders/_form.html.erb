@@ -10,10 +10,10 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= form.label :fullname %>
-    <%= form.text_field :fullname %>
+    <%= form.text_field :full_name unless logged_in? %>
+    <%= form.text_field :full_name, value: current_user.name if logged_in? %>
   </div>
 
   <div class="field">
@@ -28,7 +28,8 @@
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email unless logged_in? %>
+    <%= form.text_field :email, value: current_user.email if logged_in? %>
   </div>
 
   <div class="actions">

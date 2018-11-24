@@ -12,8 +12,13 @@
     <%= link_to content_tag(:span,product.name), product,class: 'name' %></div>
   <div class="secondline"> <span> <%= product.sale_price %></span>
     <%if !Desire.find_by(product_id: product.id) %>
+      <% if logged_in?%>
         <%= link_to "Cart", 'javascript:void(0);',
                     id: 'create_desire', class: "#{product.id} #{current_user.id}" %></div>
+      <% end %>
+
+      <%= link_to "Cart", 'javascript:void(0);',
+                  id: 'create_desire', class: "#{product.id}" %>
     <%end %>
   <!-- desires_path(desire: {product_id: product.id,user_id: current_user.id}),
   action: :create, :method => :post -->
