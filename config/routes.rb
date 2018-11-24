@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :desires
   get 'password_resets/new'
   get 'password_resets/edit'
   get '/help', to: 'static_pages#help'
