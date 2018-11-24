@@ -5,12 +5,39 @@ Product{
     sale_price : string
 }
 
+
+User {
+email : string
+password : string bycrypt
+number : string
+address : string
+name : string
+birthday : date
+sex : string
+secret_question : string
+}
+
+Desires{
+    desire_id
+    user_id
+    product_id
+    created_at
+}
+
+Orders{
+    full_name
+    city
+    mobile
+    email
+}
+
 Tags {
     product_id
     tag1, : string
     ...
     tagN.
 }
+
 
 Post{
     deliver_id
@@ -20,17 +47,6 @@ Post{
     time_in : datetime
     delivery_type : string
     delivered : boolean
-}
-
-User {
-email : string
-password : string bycrypt
-number : string
-address : string
-name : string
-birthdat : date
-sex : string
-secret_question : string
 }
 
 Recipien { 
