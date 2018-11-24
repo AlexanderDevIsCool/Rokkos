@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 
-    <% @products.each do |product| %>
+
+<% @products.each do |product| %>
 
 
 <div class="item"> <%= image_tag(product.image.thumb.url, alt: 'Image',height: '250px',width: '250px') %>
@@ -10,7 +11,11 @@
 
     <%= link_to content_tag(:span,product.name), product,class: 'name' %></div>
   <div class="secondline"> <span> <%= product.sale_price %></span>
-        <%= link_to "Cart" %></div>
+        <%= link_to "Cart", 'javascript:void(0);',
+                    id: 'create_desire', class: "#{product.id} #{current_user.id}" %></div>
+
+  <!-- desires_path(desire: {product_id: product.id,user_id: current_user.id}),
+  action: :create, :method => :post -->
 
   <% if logged_in_and_admin? %>
     <%= link_to 'Edit', edit_product_path(product) %>
@@ -20,10 +25,7 @@
 </div>
 
 
-
-
-
-    <% end %>
+<% end %>
 
 
 <% if logged_in_and_admin? %>

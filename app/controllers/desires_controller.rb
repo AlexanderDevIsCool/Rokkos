@@ -62,13 +62,12 @@ class DesiresController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_desire
       @desire = Desire.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+
     def desire_params
-      params.fetch(:desire, {})
+      params.require(:desire).permit(:user_id, :product_id)
     end
 end
