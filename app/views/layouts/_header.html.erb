@@ -5,7 +5,10 @@
       <ul>
         <li id="logo"><%= link_to "Rokkos", root_path %></li>
         <li id=""><%= link_to "My cart", desires_path %></li>
-        <li id=""><%= link_to "My oreders", orders_path %></li>
+        <li id=""><%= link_to "My orders", orders_path %></li>
+        <% if logged_in_and_admin? %>
+          <li id=""><%= link_to "Tags", tags_path %></li>
+        <% end %>
         <li><div class="dropdown"><%= link_to "Men's" %>
         <div class="dropdown-content">
           <a href="#">Link 1</a>
