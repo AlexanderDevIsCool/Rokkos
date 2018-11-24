@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tags
   resources :orders
   resources :desires
   get 'password_resets/new'
