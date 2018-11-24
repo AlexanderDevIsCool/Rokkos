@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Desires</h1>
+<h1>Корзина</h1>
 
 <table>
   <thead>
@@ -11,8 +11,10 @@
 
   <tbody>
     <% @desires.each do |desire| %>
+      product name: <%= Product.find_by(id: desire.product_id).name%><br/>
+      product price: <%= Product.find_by(id: desire.product_id).sale_price%>
       <tr>
-        <td><%= link_to 'Show', desire %></td>
+        <td><%= link_to product_path(desire.product_id)%></td>
         <td><%= link_to 'Edit', edit_desire_path(desire) %></td>
         <td><%= link_to 'Destroy', desire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

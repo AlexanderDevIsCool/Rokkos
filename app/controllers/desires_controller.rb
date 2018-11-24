@@ -1,6 +1,6 @@
 class DesiresController < ApplicationController
   before_action :set_desire, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :verify_authenticity_token, only: %i[create destroy]
   # GET /desires
   # GET /desires.json
   def index
@@ -25,16 +25,7 @@ class DesiresController < ApplicationController
   # POST /desires.json
   def create
     @desire = Desire.new(desire_params)
-
-    respond_to do |format|
-      if @desire.save
-        format.html { redirect_to @desire, notice: 'Desire was successfully created.' }
-        format.json { render :show, status: :created, location: @desire }
-      else
-        format.html { render :new }
-        format.json { render json: @desire.errors, status: :unprocessable_entity }
-      end
-    end
+    @desire.save!
   end
 
   # PATCH/PUT /desires/1
@@ -68,6 +59,6 @@ class DesiresController < ApplicationController
 
 
     def desire_params
-      params.require(:desire).permit(:user_id, :product_id)
+      params.permit(:user_id, :product_id)
     end
 end

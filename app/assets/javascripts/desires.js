@@ -3,9 +3,11 @@
 $(document).ready(function() {
     // AJAX Delete File function ->
     $("#create_desire").on('click', function () {
+        var classes = $("#create_desire").attr('class').split(" ");
         if (confirm('Are you sure ?')) {
             $.ajax({
-                url: '/desires' + this.classList(0) + this.classList.item(1),
+                url: '/desires?user_id=' + classes[0] +
+                '&product_id=' + classes[1],
                 type: 'POST',
 
                 success: function (r) {

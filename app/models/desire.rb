@@ -1,4 +1,4 @@
 class Desire < ApplicationRecord
   belongs_to :user
-  belongs_to :patient
+  belongs_to :product
 end
