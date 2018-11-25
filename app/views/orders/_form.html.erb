@@ -31,6 +31,20 @@
     <%= form.text_field :email unless logged_in? %>
     <%= form.text_field :email, value: current_user.email if logged_in? %>
   </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :order_address %>
+  </div>
+
+  <div class="field">
+    <%= form.label  "Тип доставки "%><br />
+    <%= form.label :order_type, "Yes", :value => "true"  %>
+    <%= form.radio_button :order_type, true %>
+    <%= form.label :order_type, "No", :value => "false" %>
+    <%= form.radio_button :order_type, false, :checked => true %>
+  </div>
+
   <%= form.hidden_field :user_id, value: current_user.id %>
   <div class="actions">
     <%= form.submit %>
