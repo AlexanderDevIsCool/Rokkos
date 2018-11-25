@@ -20,5 +20,19 @@
   <%= @order.email %>
 </p>
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
+<p>
+  <strong>Order type:</strong>
+  <%= @order.order_type %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @order.quantity %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @order.order_price %>
+</p>
+
 <%= link_to 'Back', orders_path %>

@@ -10,13 +10,14 @@
 </div><div id="productprice">  <%= @product.sale_price %></div>
 
 
-<%= form_tag new_order_path do %>
-  Кількість: <%= @product.quatity %>
-  <%= number_field_tag("quantity", min: "1", max: "#{@product.quantity}")%>
-  <%= hidden_field_tag(:user_id, value: current_user.id)%>
-  <%= hidden_field_tag(:product_id, value: @product.id)%>
+<%= form_for(:order, :url => {:controller => 'orders', :action => 'new'},
+             html:{method: 'GET'}) do |f| %>
+  Кількість: <%= @product.quantity %>
+  <%= f.number_field(:quantity, min: "1", max: "#{@product.quantity}")%>
+  <%= f.hidden_field(:user_id, value: current_user.id)%>
+  <%= f.hidden_field(:product_id, value: @product.id)%>
 
-  <%= submit_tag("Купити", id: "buy-btn", name: "buy")%>
+  <%= f.submit("Купити", id: "buy-btn", name: "buy")%>
 
 <% end %>
 

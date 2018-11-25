@@ -18,7 +18,9 @@ class OrdersController < ApplicationController
     @user = User.find_by(id: new_order_params[:user_id])
     @product = Product.find_by(id: new_order_params[:product_id])
     @quantity = new_order_params[:quantity]
-    @order_price = @product.price.to_i * @quantity
+    @order_price = (@product.sale_price.to_i * @quantity.to_i).to_s
+    p "quantity: #{@quantity}"
+    p "order_price: #{@order_price}"
   end
 
   # GET /orders/1/edit
@@ -75,10 +77,10 @@ class OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:full_name, :city, :mobile,
                                     :email, :user_id, :order_type,
-                                    :order_address)
+                                    :order_address, :quantity, :order_price)
     end
 
     def new_order_params
-      params.require(:order).permit(:product_id, :user_id)
+      params.require(:order).permit(:product_id, :user_id, :quantity)
     end
 end
