@@ -29,6 +29,7 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 gem 'file_validators'
+gem 'jquery-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
