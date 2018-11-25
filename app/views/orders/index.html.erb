@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Orders</h1>
-  <%if @orders %>
+  <%unless @orders.empty? %>
 
   <table>
     <thead>
@@ -32,7 +32,3 @@
 
   <% end %>
 
-
-<br>
-
-<%= link_to 'New Order', new_order_path %>

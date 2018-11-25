@@ -31,7 +31,7 @@
     <%= form.text_field :email unless logged_in? %>
     <%= form.text_field :email, value: current_user.email if logged_in? %>
   </div>
-
+  <%= form.hidden_field :user_id, value: current_user.id %>
   <div class="actions">
     <%= form.submit %>
   </div>

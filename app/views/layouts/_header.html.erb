@@ -4,10 +4,7 @@
 
       <ul>
         <li id="logo"><%= link_to "Rokkos", root_path %></li>
-        <li id=""><%= link_to "My cart", desires_path %></li>
-        <li id=""><%= link_to "My orders", orders_path %></li>
         <% if logged_in_and_admin? %>
-          <li id=""><%= link_to "Tags", tags_path %></li>
         <% end %>
         <li><div class="dropdown"><%= link_to "Men's" %>
         <div class="dropdown-content">
@@ -25,17 +22,17 @@
 
 
 
-
           <div class="dropdown float-right"><li><%= link_to "Example" %>
             <div class="dropdown-content">
               <%= link_to "Log out", logout_path, method: :delete %>
+                <%= link_to "My cart", desires_path %>
+                <%= link_to "My orders", orders_path %>
               <%= link_to "Settings", edit_user_path(current_user) %>
               <% if logged_in_and_admin? %>
                 <%= link_to "Users", users_path %>
-
-
-
+                <%= link_to "Tags", tags_path %>
               <% end %>
+
             </div></li></div>
 
             </ul>
