@@ -46,6 +46,8 @@
   </div>
 
   <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :quantity, value: @quantity %>
+  <%= form.hidden_field :order_price, value: @order_price %>
   <div class="actions">
     <%= form.submit %>
   </div>

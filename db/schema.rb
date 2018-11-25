@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_25_081541) do
+ActiveRecord::Schema.define(version: 2018_11_25_085807) do
 
   create_table "desires", force: :cascade do |t|
     t.integer "user_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2018_11_25_081541) do
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "product_id"
     t.string "full_name"
     t.string "city"
     t.string "mobile"
@@ -31,7 +32,9 @@ ActiveRecord::Schema.define(version: 2018_11_25_081541) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "order_address"
-    t.index [nil], name: "index_orders_on_product_id"
+    t.string "quantity"
+    t.string "order_price"
+    t.index ["product_id"], name: "index_orders_on_product_id"
   end
 
   create_table "product_tags_joins", force: :cascade do |t|
@@ -50,6 +53,7 @@ ActiveRecord::Schema.define(version: 2018_11_25_081541) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
+    t.integer "quantity"
   end
 
   create_table "tags", force: :cascade do |t|

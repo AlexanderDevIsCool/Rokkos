@@ -17,6 +17,8 @@ class OrdersController < ApplicationController
     @order = Order.new
     @user = User.find_by(id: new_order_params[:user_id])
     @product = Product.find_by(id: new_order_params[:product_id])
+    @quantity = new_order_params[:quantity]
+    @order_price = @product.price.to_i * @quantity
   end
 
   # GET /orders/1/edit
