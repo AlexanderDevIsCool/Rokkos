@@ -59,6 +59,6 @@ class DesiresController < ApplicationController
 
 
     def desire_params
-      params.permit(:user_id, :product_id)
+      params.permit(:user_id, :product_id, :desires_quantity)
     end
 end

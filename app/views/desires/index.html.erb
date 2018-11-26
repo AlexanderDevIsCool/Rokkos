@@ -15,7 +15,7 @@
         <td><%= link_to 'Show', (product_path(desire.product_id))%></td>
         <td><%= link_to 'Destroy', desire, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <%= link_to "BUY", new_order_path(order:{
-            product_id: desire.product_id, user_id: current_user.id}) %>
+            product_id: desire.product_id, user_id: current_user.id, quantity: desire.desires_quantity}) %>
       </tr>
     <% end %>
   </tbody>

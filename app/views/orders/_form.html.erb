@@ -38,6 +38,12 @@
   </div>
 
   <div class="field">
+    <%= form.label "post number" %>
+    <%= form.text_field :post_number %>
+  </div>
+
+
+  <div class="field">
     <%= form.label  "Тип доставки "%><br />
     <%= form.label :order_type, "Yes", :value => "true"  %>
     <%= form.radio_button :order_type, true %>
@@ -46,6 +52,7 @@
   </div>
 
   <%= form.hidden_field :user_id, value: current_user.id %>
+  <%= form.hidden_field :product_id, value: @product.id %>
   <%= form.hidden_field :quantity, value: @quantity %>
   <%= form.hidden_field :order_price, value: @order_price %>
   <div class="actions">

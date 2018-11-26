@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_25_110040) do
+ActiveRecord::Schema.define(version: 2018_11_26_201145) do
 
   create_table "desires", force: :cascade do |t|
     t.integer "user_id"
     t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "desires_quantity"
     t.index ["product_id"], name: "index_desires_on_product_id"
     t.index ["user_id"], name: "index_desires_on_user_id"
   end
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_11_25_110040) do
     t.string "quantity"
     t.string "order_price"
     t.integer "product_id"
+    t.string "post_number"
     t.index ["product_id"], name: "index_orders_on_product_id"
   end
 

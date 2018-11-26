@@ -47,26 +47,26 @@
   <div class="name">
 
     <%= link_to content_tag(:span,product.name), product,class: 'name' %></div>
-  <div class="secondline"> <span id="price"> <%= product.sale_price %></span> <span id="price-sale"> <%= product.sale_price %></span>
-    <%if !Desire.find_by(product_id: product.id) %>
-      <% if logged_in?%>
+  <div class="secondline"> <span id="price">
+    <%= product.sale_price %></span>
+    <span id="price-sale"> <%= product.sale_price %></span>
+    <% if logged_in?%>
+      <%unless Desire.where(user_id: current_user.id, product_id: product.id).any? %>
         <%= link_to "В корзину", 'javascript:void(0);',
-                    id: 'create_desire', class: "#{product.id} #{current_user.id}" %></div>
-      <% end %>
-
+                    id: 'create_desire', class: "#{current_user.id} #{product.id} #{1}" %></div>
+        <%end%>
+      <% else %>
       <%= link_to "В корзину", 'javascript:void(0);',
-                  id: 'create_desire', class: "#{product.id}" %>
-    <%end %>
+                  id: 'create_desire_unlogged', class: "#{product.id}" %>
+    <% end %>
   <!-- desires_path(desire: {product_id: product.id,user_id: current_user.id}),
   action: :create, :method => :post -->
+</div>
 
   <% if logged_in_and_admin? %>
     <%= link_to 'Редагувати', edit_product_path(product) %>
     <%= link_to 'Видалити', product, method: :delete, data: { confirm: 'Ви впевненні?' } %>
   <%end%>
-
-</div>
-
 
 <% end %>
 
@@ -74,3 +74,5 @@
 <% if logged_in_and_admin? %>
 <%= link_to 'New Product', new_product_path %>
 <%end%>
+
+<%= javascript_include_tag('products')%>

@@ -19,8 +19,6 @@ class OrdersController < ApplicationController
     @product = Product.find_by(id: new_order_params[:product_id])
     @quantity = new_order_params[:quantity]
     @order_price = (@product.sale_price.to_i * @quantity.to_i).to_s
-    p "quantity: #{@quantity}"
-    p "order_price: #{@order_price}"
   end
 
   # GET /orders/1/edit
@@ -31,9 +29,9 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-
     respond_to do |format|
       if @order.save
+        @order.order_create
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
@@ -77,7 +75,8 @@ class OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:full_name, :city, :mobile,
                                     :email, :user_id, :order_type,
-                                    :order_address, :quantity, :order_price)
+                                    :order_address, :quantity, :order_price,
+                                    :post_number, :product_id)
     end
 
     def new_order_params
