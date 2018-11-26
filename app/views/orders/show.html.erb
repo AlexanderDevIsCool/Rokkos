@@ -1,38 +1,39 @@
 <p id="notice"><%= notice %></p>
-
+<div id="order-show">
 <p>
-  <strong>Fullname:</strong>
+  <strong>ПІБ :</strong>
   <%= @order.full_name %>
 </p>
 
 <p>
-  <strong>City:</strong>
+  <strong>Місто:</strong>
   <%= @order.city %>
 </p>
 
 <p>
-  <strong>Mobile:</strong>
+  <strong>Телефон:</strong>
   <%= @order.mobile %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong>Електронна пошта:</strong>
   <%= @order.email %>
 </p>
 
 <p>
-  <strong>Order type:</strong>
+  <strong>Доставка:</strong>
   <%= @order.order_type %>
 </p>
 
 <p>
-  <strong>Quantity:</strong>
+  <strong>Кількість:</strong>
   <%= @order.quantity %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>Ціна:</strong>
   <%= @order.order_price %>
 </p>
 
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Назад', orders_path %>
+</div>

@@ -6,31 +6,32 @@
         <li id="logo"><%= link_to "Rokkos", root_path %></li>
         <% if logged_in_and_admin? %>
         <% end %>
-        <li><div class="dropdown"><%= link_to "Men's" %>
+        <li><div class="dropdown"><%= link_to "Чоловічі" %>
         <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+          <a href="#">Кошельки</a>
+          <a href="#">Портмане</a>
+          <a href="#">Ремінці</a>
         </div></div></li>
-     <li> <div class="dropdown"><%= link_to "Women's" %>
+     <li> <div class="dropdown"><%= link_to "Жіночі" %>
           <div class="dropdown-content">
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
+            <a href="#">Кошельки</a>
+            <a href="#">Портмане</a>
+            <a href="#">Ремінці</a>
           </div></div></li>
         <% if logged_in? %>
 
 
 
-          <div class="dropdown float-right"><li><%= link_to "Example" %>
+          <div class="dropdown float-right"><li><%= link_to current_user.name %>
             <div class="dropdown-content">
-              <%= link_to "Log out", logout_path, method: :delete %>
-                <%= link_to "My cart", desires_path %>
-                <%= link_to "My orders", orders_path %>
-              <%= link_to "Settings", edit_user_path(current_user) %>
+
+                <%= link_to "Корзина", desires_path %>
+                <%= link_to "Замовлення", orders_path %>
+              <%= link_to "Настройки", edit_user_path(current_user) %>
               <% if logged_in_and_admin? %>
-                <%= link_to "Users", users_path %>
-                <%= link_to "Tags", tags_path %>
+                <%= link_to "Користувачі", users_path %>
+                <%= link_to "Теги", tags_path %>
+                <%= link_to "Вихід", logout_path, method: :delete %>
               <% end %>
 
             </div></li></div>
@@ -39,7 +40,7 @@
           </li>
         <% else %>
           <div class="float-right">
-            <li ><%= link_to "Log in", login_path %></li></div>
+            <li ><%= link_to "Вхід", login_path %></li></div>
         <% end %>
       </ul>
 
