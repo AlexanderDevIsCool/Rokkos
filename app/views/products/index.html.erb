@@ -68,7 +68,8 @@
   <% if logged_in_and_admin? %>
     <div class="admin-block">
       <%= link_to 'Редагувати', edit_product_path(product) %>
-      <%= link_to 'Видалити', product, method: :delete, data: { confirm: 'Ви впевнені?' } %></div>
+      <%= link_to 'Видалити', product, method: :delete, data: { confirm: 'Ви впевнені?' } %>
+    </div>
   <%end%>
 
 <% end %>
