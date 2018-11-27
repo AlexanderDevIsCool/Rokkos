@@ -120,9 +120,6 @@ vertical-align: center;
 
 }
 
-#wrapper {
-  vertical-align: center;
-}
 
 .group {
   height: 35px;
@@ -141,7 +138,7 @@ vertical-align: center;
 
     }
     #price {
-      text-decoration: line-through;
+   //   text-decoration: line-through;
     }
     #price-sale {
       color: red;
@@ -209,14 +206,29 @@ vertical-align: center;
 }
 
 #footer {
+  margin: 0;
   height: 150px;
-  a {float:left; margin: 15px; color: #999999;text-decoration: none;
-  font-size: 15px;}
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  #footer-box {
+    width: 700px;
+
+    margin: 50px auto 0;
+    overflow: hidden;
+    height: 75px;
+    img {margin: 10px}
+  }
+  .linkblock{float:right;margin-top: 20px;margin-bottom: 20px;}
+  .footer-link {float:left;overflow: hidden;margin-right: 10px;
+    span { color: #999999;
+  font-size: 15px;}}
 }
 
 .account {
   width: 600px;
   margin: 0 auto;
+  margin-top: 25px;
 }
 
 .acc-input {
@@ -260,6 +272,14 @@ vertical-align: center;
     cursor: pointer;
   }
 }
+#checkbox {
+
+  padding: 5px;
+  input {
+    margin: 5px;
+
+  }
+}
 
 #regbtn {
   border: 2px solid #fff;
@@ -290,8 +310,8 @@ vertical-align: center;
 
 .back {
   float: left;
-  height: 40px;
-  width: 40px;
+position: absolute;
+
 }
 
 #productpicture {
@@ -326,6 +346,9 @@ vertical-align: center;
   height: 300px;
   font-size: 24px;
   margin: 25px;
+  overflow: hidden;
+  display: block;
+  word-wrap: break-word;
 }
 
 #productprice {
@@ -338,6 +361,7 @@ vertical-align: center;
 
 #loginpng {
   margin: 25px;
+
 }
 
 #signup-title {
@@ -544,9 +568,13 @@ float:right;
 }
 
 .admin-block {
+  margin-top: 10px;
   a {
+    color: #1d1d1d;
+    border: none;
     text-transform: uppercase;
     text-decoration: none;
+    background-color: transparent;
 
   }
   padding: 5px;border: 1px solid #1d1d1d;

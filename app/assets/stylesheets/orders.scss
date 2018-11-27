@@ -14,7 +14,7 @@ table {
   a {
 
   padding: 5px;
-margin-left: 15%;
+
   text-decoration: none;
   color: #1d1d1d;
   background-color: #fff;
@@ -35,12 +35,13 @@ th, td {
 p {margin: 10px;
 }
 #order-show {
-
+margin: 0 auto;
   max-width: 500px;
   text-align: left;
-  strong {float:left;width: 200px;}
+  img {margin: 65px;}
+  strong {float:left;width: 250px;}
   p {padding: 5px;}
-  a {margin-left: 40%;font-size: 20px;font-weight: bold;text-decoration: none;}
+  a {margin-left: 40%;font-size: 15px;font-weight: bold;text-decoration: none;}
 }
 #new-order {
   margin: 0 auto;
@@ -49,4 +50,20 @@ p {margin: 10px;
   .field {
     input {padding: 5px;}
     label {float: left;width: 200px;} }
+}
+.actions {margin-left: 35%;
+  input{ padding: 5px;
+    margin-bottom: 25px;
+border: 1px solid #1d1d1d;
+    font-size:15px;
+  color: #1d1d1d;
+  background-color: #fff;
+  text-transform: uppercase;
+  transition: all ease-in .3s;
+  &:hover {
+    background-color: #1d1d1d;
+    color: #fff;
+
+  }
+  }
 }
