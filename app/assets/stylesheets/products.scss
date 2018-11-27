@@ -112,7 +112,7 @@ vertical-align: center;
 
   #logo {
     text-transform: uppercase;
-    padding-left:0;padding-bottom: 25px;padding-top: 15px;
+    padding-left:0;padding-bottom: 25px;padding-top: 16px;
     a {font-family: Abril Fatface;}
   }#logo a:hover {background: transparent;border: 1px solid transparent;}
 
@@ -212,7 +212,7 @@ vertical-align: center;
   display: block;
   overflow: hidden;
   #footer-box {
-    width: 700px;
+    width: 800px;
 
     margin: 50px auto 0;
     overflow: hidden;
@@ -501,7 +501,7 @@ float:right;
 }
 
 /* Next & previous buttons */
-.prev, .next {
+#prev, #next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -517,16 +517,16 @@ float:right;
 }
 
 /* Position the "next button" to the right */
-.next {
+#next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
-.prev {
+#prev {
   left: 0;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
+#prev:hover, #next:hover {
   background-color: rgba(0,0,0,0.8);
   color: #fff;
 }
@@ -578,4 +578,9 @@ float:right;
 
   }
   padding: 5px;border: 1px solid #1d1d1d;
+}
+h1 {
+  margin: 50px;
+  font-weight: normal;
+  font-family: Roboto;
 }

@@ -46,7 +46,6 @@ function myFunction() {
     }
 }
 
-
     var slideIndex = 1;
     showSlides(slideIndex);
 
@@ -84,25 +83,12 @@ function myFunction() {
 
 
     }
-    var slideIndex1 = 0;
-    showSlidesAuto();
 
-    function showSlidesAuto() {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slideIndex1++;
-        if (slideIndex1 > slides.length) {slideIndex1 = 1}
-        slides[slideIndex1-1].style.display = "block";
-        dots[slideIndex1-1].className += " active";
-        setTimeout(showSlidesAuto, 5000); // Change image every 2 seconds
-    }
+    $(document).ready(function() {
+        setInterval(function () {
+            document.getElementById("next").click();
+        }, 5000);
+    });
 
 </script>
 </html>
