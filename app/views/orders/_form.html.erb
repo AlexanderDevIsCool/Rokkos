@@ -1,3 +1,4 @@
+<div id="new-order">
 <%= form_with(model: order, local: true) do |form| %>
   <% if order.errors.any? %>
     <div id="error_explanation">
@@ -11,43 +12,43 @@
     </div>
   <% end %>
   <div class="field">
-    <%= form.label :fullname %>
+    <%= form.label "ПІБ" %>
     <%= form.text_field :full_name unless logged_in? %>
     <%= form.text_field :full_name, value: current_user.name if logged_in? %>
   </div>
 
   <div class="field">
-    <%= form.label :c %>
+    <%= form.label "Місто" %>
     <%= form.text_field :city %>
   </div>
 
   <div class="field">
-    <%= form.label :mobile %>
+    <%= form.label "Телефон" %>
     <%= form.text_field :mobile %>
   </div>
 
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label "Електронна пошта" %>
     <%= form.text_field :email unless logged_in? %>
     <%= form.text_field :email, value: current_user.email if logged_in? %>
   </div>
 
   <div class="field">
-    <%= form.label :address %>
+    <%= form.label "Адреса" %>
     <%= form.text_field :order_address %>
   </div>
 
   <div class="field">
-    <%= form.label "post number" %>
+    <%= form.label "Поштовий індекс" %>
     <%= form.text_field :post_number %>
   </div>
 
 
   <div class="field">
     <%= form.label  "Тип доставки "%><br />
-    <%= form.label :order_type, "Yes", :value => "true"  %>
+    <%= form.label :order_type, "Укрпошта", :value => "true"  %>
     <%= form.radio_button :order_type, true %>
-    <%= form.label :order_type, "No", :value => "false" %>
+    <%= form.label :order_type, "Нова пошта", :value => "false" %>
     <%= form.radio_button :order_type, false, :checked => true %>
   </div>
 
@@ -59,3 +60,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+</div>

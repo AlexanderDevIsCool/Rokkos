@@ -38,7 +38,11 @@
     <span class="dot" onclick="currentSlide(3)"></span>
   </div></div>
 <div class="clear"></div>
-<div class="group"> Новинки </div>
+<% if logged_in_and_admin? %><div class="admin-block">
+
+  <%= link_to 'Добавати товар', new_product_path %></div>
+  <%end%>
+<div class="group"> tags </div>
 <% @products.each do |product| %>
 
 
@@ -64,15 +68,14 @@
 </div>
 
   <% if logged_in_and_admin? %>
-    <%= link_to 'Редагувати', edit_product_path(product) %>
-    <%= link_to 'Видалити', product, method: :delete, data: { confirm: 'Ви впевненні?' } %>
+    <div class="admin-block">
+      <%= link_to 'Редагувати', edit_product_path(product) %>
+      <%= link_to 'Видалити', product, method: :delete, data: { confirm: 'Ви впевнені?' } %></div>
   <%end%>
 
 <% end %>
 
 
-<% if logged_in_and_admin? %>
-<%= link_to 'New Product', new_product_path %>
-<%end%>
+
 
 <%= javascript_include_tag('products')%>

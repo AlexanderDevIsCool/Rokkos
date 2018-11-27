@@ -11,6 +11,22 @@ h1{margin: 10px;}
 table {
   border-collapse: collapse;
   width: 100%;
+  a {
+
+  padding: 5px;
+margin-left: 15%;
+  text-decoration: none;
+  color: #1d1d1d;
+  background-color: #fff;
+  text-transform: uppercase;
+  transition: all ease-in .3s;
+  &:hover {
+    background-color: #1d1d1d;
+    color: #fff;
+
+
+  }
+}
 }
 
 th, td {
@@ -20,10 +36,17 @@ p {margin: 10px;
 }
 #order-show {
 
-  margin: 0 auto;
   max-width: 500px;
   text-align: left;
   strong {float:left;width: 200px;}
   p {padding: 5px;}
   a {margin-left: 40%;font-size: 20px;font-weight: bold;text-decoration: none;}
+}
+#new-order {
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: left;
+  .field {
+    input {padding: 5px;}
+    label {float: left;width: 200px;} }
 }
