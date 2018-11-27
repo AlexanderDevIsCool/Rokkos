@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.where(user_id: current_user.id) if logged_in?
+    @orders = Order.all if logged_in_and_admin?
   end
 
   # GET /orders/1

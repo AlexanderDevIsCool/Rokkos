@@ -26,8 +26,10 @@
         <td><%= order.order_address %></td>
         <td><%= order.order_type %></td>
         <td><%= link_to 'Показати', order %></td>
-        <td><%= link_to 'Редагувати', edit_order_path(order) %></td>
-        <td><%= link_to 'Видалити', order, method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
+        <% if logged_in_and_admin? %>
+          <td><%= link_to 'Редагувати', edit_order_path(order) %></td>
+          <td><%= link_to 'Видалити', order, method: :delete, data: { confirm: 'Ви впевнені?' } %></td>
+        <% end %>
       </tr>
     <% end %>
 

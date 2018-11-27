@@ -46,10 +46,10 @@
 
   <div class="field">
     <%= form.label  "Тип доставки "%><br />
-    <%= form.label :order_type, "Укрпошта", :value => "true"  %>
-    <%= form.radio_button :order_type, true %>
-    <%= form.label :order_type, "Нова пошта", :value => "false" %>
-    <%= form.radio_button :order_type, false, :checked => true %>
+    <%= form.label :order_type, "Укрпошта", :value => "Укрпошта"  %>
+    <%= form.radio_button :order_type, "Укрпошта" %>
+    <%= form.label :order_type, "Нова пошта", :value => "Нова пошта" %>
+    <%= form.radio_button :order_type, "Нова пошта", :checked => true %>
   </div>
 
   <%= form.hidden_field :user_id, value: current_user.id %>
