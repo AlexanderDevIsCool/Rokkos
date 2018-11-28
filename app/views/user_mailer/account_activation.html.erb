@@ -1,10 +1,17 @@
-<h1>Sample App</h1>
+<h1>Rokkos.lviv</h1>
 
-<p>Hi <%= @user.name %>,</p>
+<div id="emailbox">
 
 <p>
-  Welcome to the Sample App! Click on the link below to activate your account:
+  Доброго дня! <%= @user.name %>
+
+ Дякуєм за реєстрацію на нашому сайті Rokkos.lviv
+
+ Для подальшої роботи з сайтом необхідно підтвердити адрес електронної пошти.
+
+
 </p>
 
 <%= link_to "Activate", edit_account_activation_url(@user.activation_token,
                                                     email: @user.email) %>
+</div>
