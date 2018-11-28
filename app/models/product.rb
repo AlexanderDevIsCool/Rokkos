@@ -10,4 +10,6 @@ class Product < ApplicationRecord
 
   validates :image, file_size: { less_than: 10.megabytes}
   validates :quantity, presence: true
+
+  validates :sort_type, presence: true
 end
