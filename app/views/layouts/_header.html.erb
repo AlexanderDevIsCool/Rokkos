@@ -8,15 +8,15 @@
         <% end %>
         <li><div class="dropdown"><%= link_to "Чоловічі" %>
         <div class="dropdown-content">
-          <a href="#">Кошельки</a>
-          <a href="#">Портмане</a>
-          <a href="#">Ремінці</a>
+          <%= link_to('Кошельки', products_path(sort_type: 'Кошельок'))%>
+          <%= link_to('Портмане', products_path(sort_type: 'Портмане'))%>
+          <%= link_to('Ремінець', products_path(sort_type: 'Ремінець'))%>
         </div></div></li>
      <li> <div class="dropdown"><%= link_to "Жіночі" %>
           <div class="dropdown-content">
-            <a href="#">Кошельки</a>
-            <a href="#">Портмане</a>
-            <a href="#">Ремінці</a>
+            <%= link_to('Кошельки', products_path(sort_type: 'Кошельок'))%>
+            <%= link_to('Портмане', products_path(sort_type: 'Портмане'))%>
+            <%= link_to('Ремінець', products_path(sort_type: 'Ремінець'))%>
           </div></div></li>
         <% if logged_in? %>
 

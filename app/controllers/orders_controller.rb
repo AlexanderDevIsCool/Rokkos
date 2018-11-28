@@ -5,7 +5,9 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.where(user_id: current_user.id) if logged_in?
-    @orders = Order.all if logged_in_and_admin?
+    if logged_in_and_admin?
+      @orders = Order.all.sort_by { |a| a.ordered ? 0 : 1 }
+    end
   end
 
   # GET /orders/1
@@ -25,6 +27,9 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+    @product = Product.find_by(id: @order.product_id)
+    @quantity = @order.quantity
+    @order_price = @order.order_price
   end
 
   # POST /orders
@@ -47,7 +52,7 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1.json
   def update
     respond_to do |format|
-      if @order.update(order_params)
+      if @order.update(order_update_params)
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
         format.json { render :show, status: :ok, location: @order }
       else
@@ -79,6 +84,13 @@ class OrdersController < ApplicationController
                                     :email, :user_id, :order_type,
                                     :order_address, :quantity, :order_price,
                                     :post_number, :product_id)
+    end
+
+    def order_update_params
+      params.require(:order).permit(:full_name, :city, :mobile,
+                                    :email, :user_id, :order_type,
+                                    :order_address, :quantity, :order_price,
+                                    :post_number, :product_id, :ordered)
     end
 
     def new_order_params

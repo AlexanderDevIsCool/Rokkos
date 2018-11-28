@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_26_201145) do
+ActiveRecord::Schema.define(version: 2018_11_27_180213) do
 
   create_table "desires", force: :cascade do |t|
     t.integer "user_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_11_26_201145) do
     t.string "order_price"
     t.integer "product_id"
     t.string "post_number"
+    t.boolean "ordered", default: false
     t.index ["product_id"], name: "index_orders_on_product_id"
   end
 
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 2018_11_26_201145) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.string "quantity"
+    t.string "sort_type"
   end
 
   create_table "tags", force: :cascade do |t|

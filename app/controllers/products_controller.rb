@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    @products = Product.where(sort_type: params[:sort_type]) unless params[:sort_type].nil?
   end
 
   # GET /products/1
@@ -69,6 +70,6 @@ class ProductsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:name, :description, :sale_price, :image, :image_cache,
-                                      :quantity)
+                                      :quantity, :sort_type)
     end
 end

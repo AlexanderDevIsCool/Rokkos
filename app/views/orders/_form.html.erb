@@ -52,7 +52,17 @@
     <%= form.radio_button :order_type, "Нова пошта", :checked => true %>
   </div>
 
-  <%= form.hidden_field :user_id, value: current_user.id %>
+    <% unless @order.created_at.nil?%>
+      <div class="field">
+        <%= form.label  "Відправлено ? "%><br />
+        <%= form.label :ordered, "true", :value => "true"  %>
+        <%= form.radio_button :ordered, true %>
+        <%= form.label :ordered, "false", :value => "false" %>
+        <%= form.radio_button :ordered, false, :checked => !@order.ordered %>
+      </div>
+
+    <% end %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
   <%= form.hidden_field :product_id, value: @product.id %>
   <%= form.hidden_field :quantity, value: @quantity %>
   <%= form.hidden_field :order_price, value: @order_price %>

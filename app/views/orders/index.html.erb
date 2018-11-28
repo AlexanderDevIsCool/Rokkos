@@ -12,6 +12,8 @@
       <th>Електронна пошта</th>
       <th>Адреса</th>
       <th>Доставка</th>
+      <th>Номер відділення</th>
+      <th>Відправлено</th>
       <th colspan="3"></th>
     </tr>
     </thead>
@@ -25,6 +27,8 @@
         <td><%= order.email %></td>
         <td><%= order.order_address %></td>
         <td><%= order.order_type %></td>
+        <td><%= order.post_number %></td>
+        <td><%= order.ordered %></td>
         <td><%= link_to 'Показати', order %></td>
         <% if logged_in_and_admin? %>
           <td><%= link_to 'Редагувати', edit_order_path(order) %></td>
