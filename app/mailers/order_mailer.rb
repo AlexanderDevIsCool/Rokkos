@@ -3,6 +3,6 @@ class OrderMailer < ApplicationMailer
     @user = user
     @order = order
     @product = product
-    mail to: user.email, subject: "Create"
+    mail to: user.email, subject: "create"
   end
 end
