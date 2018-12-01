@@ -42,3 +42,44 @@
 <%= link_to 'Edit', edit_product_path(@product) %>
   <% end %>
 
+<h2>Comments</h2>
+<% @product.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
+
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+  <% if logged_in_and_admin? %>
+    <%= link_to 'Destroy Comment', [comment.product, comment],
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+  <% end %>
+
+  <% if logged_in? && current_user.id == comment.user_id && !current_user.admin? %>
+    <%= link_to 'Destroy Comment', [comment.product, comment],
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<% end %>
+
+<% if logged_in? %>
+<h2>Add a comment:</h2>
+<%= form_with(model: [ @product, @product.comments.build ], local: true) do |form| %>
+  <p>
+    <%= form.hidden_field(:commenter, value: current_user.name) %>
+    <%= form.hidden_field(:user_id, value: current_user.id) %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+  <% end %>
+<% end %>
+

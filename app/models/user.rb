@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :desires
   has_many :orders
   has_many :products, :through => :desires
-
+  has_many :comments
 
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save :downcase_email

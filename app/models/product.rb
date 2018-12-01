@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   has_many :tags
+  has_many :comments
 
   validates :name, presence: true, length: { minimum: 3, maximun: 50},
             uniqueness: { case_sensitive: false }
