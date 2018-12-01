@@ -1,6 +1,20 @@
 <h1>Editing Tag</h1>
 
-<%= render 'form', tag: @tag %>
+Product: <%= @product.name %>
+<% Tag.where(product_id: @product.id).each do |tag| %>
+  <br/>Tag: <%= tag.name %>
+  <% unless tag.name.blank? %>
+    <%= link_to 'Видалити', tag, method: :delete, data: { confirm: 'Ви впевнені?' } %>
+    <% end %>
+<% end %>
+<br/>
+<%= form_for(:tag, :url => {:controller => 'tags', :action => 'update'},
+             html:{method: 'PATCH'}) do |f| %>
+  Кількість:
+  <%= text_area_tag(:tags)%>
+  <%= hidden_field_tag(:product_id, @product.id)%>
+  <%= f.submit("Редагувати", id: "edit-tag-btn", name: "edit-tag")%>
 
-<%= link_to 'Show', @tag %> |
+<% end %>
+<br/>
 <%= link_to 'Back', tags_path %>

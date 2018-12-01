@@ -5,11 +5,13 @@ class TagsController < ApplicationController
   # GET /tags.json
   def index
     @tags = Tag.all
+    @products = Product.all
   end
 
   # GET /tags/1
   # GET /tags/1.json
   def show
+    @product = Product.find_by(id: @tag.product_id)
   end
 
   # GET /tags/new
@@ -19,6 +21,7 @@ class TagsController < ApplicationController
 
   # GET /tags/1/edit
   def edit
+    @product = Product.find_by(id: params[:id])
   end
 
   # POST /tags
@@ -40,23 +43,21 @@ class TagsController < ApplicationController
   # PATCH/PUT /tags/1
   # PATCH/PUT /tags/1.json
   def update
-    respond_to do |format|
-      if @tag.update(tag_params)
-        format.html { redirect_to @tag, notice: 'Tag was successfully updated.' }
-        format.json { render :show, status: :ok, location: @tag }
-      else
-        format.html { render :edit }
-        format.json { render json: @tag.errors, status: :unprocessable_entity }
-      end
+    @product = Product.find_by(id: params[:product_id])
+    tags_in_str = params[:tags].split(' ')
+    tags_in_str.each do |tag|
+      Tag.create(product_id: @product.id, name: "##{tag}")
     end
+    redirect_to tags_path
   end
 
   # DELETE /tags/1
   # DELETE /tags/1.json
   def destroy
+    product_id = @tag.product_id
     @tag.destroy
     respond_to do |format|
-      format.html { redirect_to tags_url, notice: 'Tag was successfully destroyed.' }
+      format.html { redirect_to edit_tag_path(product_id), notice: 'Tag was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,5 +71,9 @@ class TagsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tag_params
       params.require(:tag).permit(:name)
+    end
+
+    def tag_edit_params
+      params.require(:tag).permit(:tags, :product_id)
     end
 end

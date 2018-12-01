@@ -5,23 +5,26 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Product name</th>
+      <th>Product tags</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @tags.each do |tag| %>
+    <% @products.each do |product| %>
       <tr>
-        <td><%= tag.name %></td>
-        <td><%= link_to 'Show', tag %></td>
-        <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
-        <td><%= link_to 'Destroy', tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= product.name %></td>
+        <td>
+          <% @tags.where(product_id: product.id).each do |tag|%>
+            <%= tag.name %>
+          <% end %>
+        </td>
+        <td><%= link_to 'Edit', edit_tag_path(product.id) %></td>
+        <td><%= link_to 'Show', product %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Tag', new_tag_path %>

@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  has_many :tags
+
   validates :name, presence: true, length: { minimum: 3, maximun: 50},
             uniqueness: { case_sensitive: false }
   validates :description, length: {mininmum: 10, maximum: 400 }

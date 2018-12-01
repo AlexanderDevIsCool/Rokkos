@@ -5,7 +5,30 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
-    @products = Product.where(sort_type: params[:sort_type]) unless params[:sort_type].nil?
+    unless params[:tags].nil?
+      product_ids = []
+      tags_counter = params[:tags].length
+      Tag.where(name: params[:tags]).each do |tag|
+        product_ids.append(tag.product_id)
+      end
+
+      b = Hash.new(0)
+
+      product_ids.each do |v|
+        b[v] += 1
+      end
+
+      product_ids.clear
+
+      b.each do |k, v|
+        if v == tags_counter
+          product_ids.append(k)
+        end
+      end
+
+
+      @products = Product.where(id: product_ids.uniq)
+    end
   end
 
   # GET /products/1
@@ -28,6 +51,8 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     respond_to do |format|
       if @product.save
+        Tag.create(product_id: @product.id)
+
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
