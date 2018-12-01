@@ -46,7 +46,7 @@
 <% @products.each do |product| %>
 
 
-<div class="item"> <%= image_tag(product.image.thumb.url, alt: 'Image',height: '250px',width: '250px') %>
+<div class="item"> <%= image_tag("#{product.attachments.first.url}", alt: 'Image',height: '250px',width: '250px') %>
 
   <div class="name">
 

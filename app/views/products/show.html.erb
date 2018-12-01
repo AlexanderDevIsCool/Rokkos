@@ -4,8 +4,8 @@
 
 
 
-<div id="productpicture"> <%= link_to(image_tag(@product.image.thumb.url, alt: 'Image'),
-                                      @product.image.url, target: '_blank') %>
+<div id="productpicture"> <%= link_to(image_tag(@product.attachments.first&.url(:thumb), alt: 'Image'),
+                                      @product.attachments.first&.url, target: '_blank') %>
 </div><div id="productprice">  <%= @product.sale_price %></div>
 
 <div id="buy-form">
@@ -23,16 +23,15 @@
 
 <div class="clear"></div>
 
-
 <div class="group">Про товар</div>
-<div class="productpics"> <%= link_to(image_tag(@product.image.thumb.url, alt: 'Image'),
-                                      @product.image.url, target: '_blank') %></div>
-<div class="productpics"> <%= link_to(image_tag(@product.image.thumb.url, alt: 'Image'),
-                                      @product.image.url, target: '_blank') %></div>
-<div class="productpics"> <%= link_to(image_tag(@product.image.thumb.url, alt: 'Image'),
-                                      @product.image.url, target: '_blank') %></div>
-<div class="productpics"> <%= link_to(image_tag(@product.image.thumb.url, alt: 'Image'),
-                                      @product.image.url, target: '_blank') %></div>
+<% if @product.attachments? %>
+  <ul>
+    <% @product.attachments.each do |attachment| %>
+      aaa
+      <li><%= link_to(image_tag(attachment.thumb.url, alt: 'Image'), attachment.url, target: '_blank') %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 
 
@@ -41,6 +40,14 @@
 <% if logged_in_and_admin? %>
 <%= link_to 'Edit', edit_product_path(@product) %>
   <% end %>
+
+<h2>Рейтинг: <%= @product.p_rating %></h2> <h2>Проголосувало: <%= @product.rating.all.count %></h2>
+
+<%= form_with(model: [@product, @product.rating.build], local: true) do |f|%>
+  rate:
+  <%= f.number_field(:value) %>
+  <%= f.submit %>
+<% end %>
 
 <h2>Comments</h2>
 <% @product.comments.each do |comment| %>

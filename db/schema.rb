@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_01_121919) do
+ActiveRecord::Schema.define(version: 2018_12_01_171112) do
 
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 2018_12_01_121919) do
     t.string "image"
     t.string "quantity"
     t.string "sort_type"
+    t.integer "p_rating", default: 0
+    t.string "attachments"
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "value"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_ratings_on_product_id"
   end
 
   create_table "tags", force: :cascade do |t|
