@@ -1,3 +1,60 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.comments{
+
+  width:60%;
+  float: left;
+  margin: 25px;
+}
+.comment-body {
+
+  border-bottom: 1px dotted #1d1d1d;
+  width: 55%;
+padding: 5px;
+  word-wrap: break-word;
+text-align: left;
+  margin-bottom: 15px;
+
+}
+.comment-add {
+  float: right;
+  width: 30%;
+  margin: 25px;
+  padding-right: 25px;
+  textarea {padding: 5px; width: 100%;resize: none;height:150px;}
+
+}
+.rating {
+  margin-top: 25px;
+
+  .ratingshow {
+    width: 25%;
+    float: left;
+    margin-bottom: 25px;
+  }
+  .rate {
+    width: 75%;
+    float: right;
+  }
+
+}
+.commbtn {
+
+
+  background-color: #1d1d1d;
+  border: 1px solid transparent;
+  padding: 10px;
+  color:#fff;
+  cursor: pointer;
+  font-size: 15px;
+
+
+  border-bottom: 1px solid #1d1d1d;
+  &:hover{
+    border: 1px solid #1d1d1d;
+    background-color: #fff;
+    color: #1d1d1d;
+    transition: all ease-in .3s;
+  }
+}

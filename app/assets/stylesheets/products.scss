@@ -130,6 +130,9 @@ vertical-align: center;
   padding-top: 5px;
 
 }
+.grouptiny {
+  border-bottom: 5px dashed #dddddd;margin: 25px;
+}
 
 .item {
   .secondline {
@@ -376,7 +379,7 @@ position: absolute;
     margin-left: 0.8em;
   }
 }
-#number {padding: 10px;margin-left: 25px;margin-right:0;font-size: 25px;border:1px solid transparent;border-bottom: 1px solid #1d1d1d;width: 130px;
+.number {padding: 10px;margin-left: 25px;margin-right:0;font-size: 25px;border:1px solid transparent;border-bottom: 1px solid #1d1d1d;width: 130px;
 &:hover{
   border: 1px solid #1d1d1d;
   transition: all ease-in .3s;
@@ -583,4 +586,32 @@ h1 {
   margin: 50px;
   font-weight: normal;
   font-family: Roboto;
+}
+#form-wrapper {
+  width: 500px;
+  margin: 0 auto;
+}
+.field {
+  margin-top: 10px;
+ label{ float:left;padding: 5px;width:200px;}
+  input {padding: 5px;width: 200px;}
+ textarea {padding: 5px; width: 200px;resize: none;height:200px;}
+}
+.photos {
+  padding: 25px;
+  height: 300px;
+  width: 40%;
+  float: left;
+  overflow: hidden;
+  ul li {
+    margin: 5px;
+    float:left;
+    list-style-type: none;
+    img {
+
+      height: 150px;
+      width: 150px;
+    }
+  }
+
 }

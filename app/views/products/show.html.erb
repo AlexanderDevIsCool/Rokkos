@@ -12,7 +12,7 @@
 <%= form_for(:order, :url => {:controller => 'orders', :action => 'new'},
              html:{method: 'GET'}) do |f| %>
   Кількість:
-  <%= f.number_field(:quantity, min: "1", max: "#{@product.quantity}",id: "number", value: "1")%>
+  <%= f.number_field(:quantity, min: "1", max: "#{@product.quantity}",class: "number", value: "1")%>
   <%= f.hidden_field(:user_id, value: current_user.id)%>
   <%= f.hidden_field(:product_id, value: @product.id)%>
 
@@ -23,70 +23,75 @@
 
 <div class="clear"></div>
 
-<div class="group">Про товар</div>
+<div class="grouptiny"></div>
+<div class="photos">
 <% if @product.attachments? %>
   <ul>
     <% @product.attachments.each do |attachment| %>
-      aaa
-      <li><%= link_to(image_tag(attachment.thumb.url, alt: 'Image'), attachment.url, target: '_blank') %></li>
+        <li><%= link_to(image_tag(attachment.thumb.url, alt: 'Image'), attachment.url, target: '_blank') %></li>
     <% end %>
   </ul>
 <% end %>
-
+</div>
 
 
 <div id="description"> <%= @product.description %></div>
 
+<div class="clear"></div>
 <% if logged_in_and_admin? %>
-<%= link_to 'Edit', edit_product_path(@product) %>
+  <div class="admin-block">
+    <%= link_to 'Редагувати', edit_product_path(@product) %></div>
   <% end %>
 
-<h2>Рейтинг: <%= @product.p_rating %></h2> <h2>Проголосувало: <%= @product.rating.all.count %></h2>
 
-<%= form_with(model: [@product, @product.rating.build], local: true) do |f|%>
-  rate:
-  <%= f.number_field(:value) %>
-  <%= f.submit %>
-<% end %>
 
-<h2>Comments</h2>
+<div class="group">Коментарі</div>
+<div class="comments">
 <% @product.comments.each do |comment| %>
+  <div class="comment-body">
   <p>
-    <strong>Commenter:</strong>
+
     <%= comment.commenter %>
   </p>
 
   <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-  <% if logged_in_and_admin? %>
-    <%= link_to 'Destroy Comment', [comment.product, comment],
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %>
-  <% end %>
 
-  <% if logged_in? && current_user.id == comment.user_id && !current_user.admin? %>
-    <%= link_to 'Destroy Comment', [comment.product, comment],
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %>
-  <% end %>
-<% end %>
+    <%= comment.body %> <% if logged_in_and_admin? %>
+      <%= link_to 'Видалити', [comment.product, comment],
+                  method: :delete,
+                  data: { confirm: 'Ви впевнені?' } %>
+    <% end %>
+
+    <% if logged_in? && current_user.id == comment.user_id && !current_user.admin? %>
+      <%= link_to 'Видалити', [comment.product, comment],
+                  method: :delete,
+                  data: { confirm: 'Ви впевнені?' } %>
+    <% end %>
+  </p></div>
+
+  <% end %></div>
 
 <% if logged_in? %>
-<h2>Add a comment:</h2>
+  <div class="comment-add"><div class="rating">
+ <div class="ratingshow">  <%= image_tag('ratingstar.png',alt: 'Image',height: '32px',width: '32px') %> <%= @product.p_rating %>  <%= image_tag('ratingpeople.jpg',alt: 'Image',height:'32px',width: '32px') %>  <%= @product.rating.all.count %>
+  </div><div class="rate">
+    <%= form_with(model: [@product, @product.rating.build], local: true) do |f|%>
+       <%= f.number_field(:value,class: 'number') %>
+      <%= f.submit 'Оцінити',class:'commbtn' %>
+    <% end %></div></div>
 <%= form_with(model: [ @product, @product.comments.build ], local: true) do |form| %>
   <p>
     <%= form.hidden_field(:commenter, value: current_user.name) %>
     <%= form.hidden_field(:user_id, value: current_user.id) %>
   </p>
   <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
+
+    <%= form.text_area :body%>
   </p>
+
   <p>
-    <%= form.submit %>
+    <%= form.submit 'Коментувати' ,class: 'commbtn' %>
   </p>
-  <% end %>
+    <% end %></div>
 <% end %>
 

@@ -10,38 +10,39 @@
       </ul>
     </div>
   <% end %>
-
+<div id="form-wrapper">
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label "Назва" %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label "Опис" %>
     <%= form.text_area :description %>
   </div>
 
-  <div>
-    <%= form.label :attachments %>
+  <div class="field">
+    <%= form.label "Фото" %>
     <%= form.file_field :attachments, multiple: true %>
   </div>
 
   <div class="field">
-    <%= form.label :sale_price %>
+    <%= form.label "Ціна" %>
     <%= form.text_field :sale_price %>
   </div>
 
   <div class="field">
-    <%= form.label :quantity %>
+    <%= form.label "Кількість" %>
     <%= form.number_field :quantity %>
   </div>
 
   <div class="field">
-    <%= form.label "sort type" %>
+    <%= form.label "Теги" %>
     <%= form.text_field :sort_type %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit  %>
   </div>
+</div>
 <% end %>
