@@ -48,9 +48,24 @@ margin: 0 auto;
   max-width: 500px;
   text-align: left;
   .field {
+    .sendfield{
+      height: 100px;
+label {float:left;width: 100px;}
+ input{float:left;}
+
+      input {width:50px;}
+
+
+
+
+    }
+
+
     input {padding: 5px;}
     label {float: left;width: 200px;} }
 }
+
+
 .actions {margin-left: 35%;
   input{ padding: 5px;
     margin-bottom: 25px;
@@ -68,4 +83,4 @@ border: 1px solid #1d1d1d;
 
   }
   }
-}
+}#sendlabel{width:400px;}

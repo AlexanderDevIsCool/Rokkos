@@ -1,5 +1,5 @@
 class OrderMailer < ApplicationMailer
-  def create(user, order, product)
+  def create( order, user, product)
     @user = user
     @order = order
     @product = product

@@ -1,10 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<div class="filters">Тут мають бути фільтри</div>
+<!--<div class="filters">Тут мають бути фільтри</div>
 <div class="slideshow-wrapper">
   <div class="slideshow-container">
 
-    <!-- Full-width images with number and caption text -->
     <div class="mySlides fade">
       <div class="numbertext">1 / 3</div>
       <img src="https://blog.dupontregistry.com/wp-content/uploads/2013/03/maybach-leather-accessories-8-600x340.jpg" style="height: 340px;width: 600px;">
@@ -25,24 +24,24 @@
       <div class="text">Caption Three</div>
     </div>
 
-    <!-- Next and previous buttons -->
+
     <a id="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a id="next" onclick="plusSlides(1)">&#10095;</a>
   </div>
   <br>
 
-  <!-- The dots/circles -->
+
   <div style="text-align:center">
     <span class="dot" onclick="currentSlide(1)"></span>
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
-  </div></div>
+  </div></div>-->
 <div class="clear"></div>
 <% if logged_in_and_admin? %><div class="admin-block">
 
   <%= link_to 'Добавати товар', new_product_path %></div>
   <%end%>
-<div class="group">  </div>
+<!-- <div class="group">  </div> -->
 <% @products.each do |product| %>
 
 

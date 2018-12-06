@@ -7,7 +7,7 @@
     <% @desires.each do |desire| %>
 
       <tr>
-        <td><%= image_tag(Product.find_by(id: desire.product_id).image.thumb.url, alt: 'Image',height: '100px',width: '100px') %></td>
+        <td><%= image_tag(Product.find_by(id: desire.product_id).attachments.first&.url(:thumb), alt: 'Image',height: '100px',width: '100px') %></td>
        <td>Назва товару: <%= Product.find_by(id: desire.product_id).name%></td>
         <td>Ціна: <%= Product.find_by(id: desire.product_id).sale_price%>
         </td>

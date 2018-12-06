@@ -44,12 +44,14 @@
   </div>
 
 
-  <div class="field">
-    <%= form.label  "Тип доставки "%><br />
+  <div class="field send">
+    <%= form.label  "Тип доставки ",id: 'sendlabel'%><br />
+    <div class="sendfield">
+
     <%= form.label :order_type, "Укрпошта", :value => "Укрпошта"  %>
     <%= form.radio_button :order_type, "Укрпошта" %>
     <%= form.label :order_type, "Нова пошта", :value => "Нова пошта" %>
-    <%= form.radio_button :order_type, "Нова пошта", :checked => true %>
+      <%= form.radio_button :order_type, "Нова пошта", :checked => true %></div>
   </div>
 
     <% unless @order.created_at.nil?%>
@@ -60,7 +62,7 @@
         <%= form.label :ordered, "false", :value => "false" %>
         <%= form.radio_button :ordered, false, :checked => !@order.ordered %>
       </div>
-
+<div class="clear"></div>
     <% end %>
     <%= form.hidden_field :user_id, value: current_user.id %>
   <%= form.hidden_field :product_id, value: @product.id %>
