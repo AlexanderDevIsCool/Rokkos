@@ -13,7 +13,7 @@ class Product < ApplicationRecord
   mount_uploaders :attachments, ImageUploader
   serialize :attachments, JSON
 
-  validates :image, file_size: { less_than: 10.megabytes}
+  validates :image, file_size: { less_than: 50.megabytes}
   validates :quantity, presence: true
 
   validates :sort_type, presence: true
