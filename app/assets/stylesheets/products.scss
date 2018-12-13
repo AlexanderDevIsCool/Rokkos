@@ -310,7 +310,12 @@ vertical-align: center;
 .field {
   margin: 25px;
 }
+.field.delivery {
 
+  input {
+    width: 50px;float:right;margin-right: 100px;
+  }
+}
 .back {
   float: left;
 position: absolute;
@@ -344,10 +349,16 @@ position: absolute;
 }
 
 #description {
+  textarea {font-size: 24px;height: 100%;width: 100%;border:none; cursor: default;
+
+  resize:none;}
+  textarea:focus {
+    outline: none;
+  }
   float: right;
   width: 40%;
   height: 300px;
-  font-size: 24px;
+
   margin: 25px;
   overflow: hidden;
   display: block;

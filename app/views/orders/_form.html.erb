@@ -39,28 +39,32 @@
   </div>
 
   <div class="field">
-    <%= form.label "Поштовий індекс" %>
+    <%= form.label "Поштовий індекс/Номер відділення" %>
     <%= form.text_field :post_number %>
   </div>
 
 
-  <div class="field send">
-    <%= form.label  "Тип доставки ",id: 'sendlabel'%><br />
-    <div class="sendfield">
+    <div class="field"> <%= form.label  "Тип доставки ",id: 'sendlabel'%></div><br>
+  <div class="field delivery">
 
-    <%= form.label :order_type, "Укрпошта", :value => "Укрпошта"  %>
-    <%= form.radio_button :order_type, "Укрпошта" %>
-    <%= form.label :order_type, "Нова пошта", :value => "Нова пошта" %>
-      <%= form.radio_button :order_type, "Нова пошта", :checked => true %></div>
+
+
+    <%= form.label :order_type, "Укрпошта", :value => "Укрпошта"  %><br>
+    <%= form.radio_button :order_type, "Укрпошта" %><br>
+    <%= form.label :order_type, "Нова пошта", :value => "Нова пошта" %><br>
+      <%= form.radio_button :order_type, "Нова пошта", :checked => true %><br>
   </div>
 
     <% unless @order.created_at.nil?%>
-      <div class="field">
-        <%= form.label  "Відправлено ? "%><br />
-        <%= form.label :ordered, "true", :value => "true"  %>
-        <%= form.radio_button :ordered, true %>
-        <%= form.label :ordered, "false", :value => "false" %>
-        <%= form.radio_button :ordered, false, :checked => !@order.ordered %>
+
+      <div class="field">  <%= form.label  "Відправлено ? "%></div><br>
+
+      <div class="field delivery">
+
+        <%= form.label :ordered, "true", :value => "true"  %><br>
+        <%= form.radio_button :ordered, true %><br>
+        <%= form.label :ordered, "false", :value => "false" %><br>
+        <%= form.radio_button :ordered, false, :checked => !@order.ordered %><br>
       </div>
 <div class="clear"></div>
     <% end %>
