@@ -36,7 +36,9 @@
 </div>
 
 
-<div id="description"> <%= @product.description %></div>
+<div id="description"><textarea readonly>
+<%= @product.description %>
+</textarea> </div>
 
 <div class="clear"></div>
 <% if logged_in_and_admin? %>
