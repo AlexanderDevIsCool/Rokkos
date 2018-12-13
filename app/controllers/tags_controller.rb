@@ -31,7 +31,7 @@ class TagsController < ApplicationController
 
     respond_to do |format|
       if @tag.save
-        format.html { redirect_to @tag, notice: 'Tag was successfully created.' }
+        format.html { redirect_to @tag, notice: 'Тег успішно додано.' }
         format.json { render :show, status: :created, location: @tag }
       else
         format.html { render :new }
@@ -57,7 +57,7 @@ class TagsController < ApplicationController
     product_id = @tag.product_id
     @tag.destroy
     respond_to do |format|
-      format.html { redirect_to edit_tag_path(product_id), notice: 'Tag was successfully destroyed.' }
+      format.html { redirect_to edit_tag_path(product_id), notice: 'Тег видалено.' }
       format.json { head :no_content }
     end
   end

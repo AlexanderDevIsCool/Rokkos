@@ -33,7 +33,7 @@ class DesiresController < ApplicationController
   def update
     respond_to do |format|
       if @desire.update(desire_params)
-        format.html { redirect_to @desire, notice: 'Desire was successfully updated.' }
+        format.html { redirect_to @desire, notice: 'Запис з корзини обновлено.' }
         format.json { render :show, status: :ok, location: @desire }
       else
         format.html { render :edit }
@@ -47,7 +47,7 @@ class DesiresController < ApplicationController
   def destroy
     @desire.destroy
     respond_to do |format|
-      format.html { redirect_to desires_url, notice: 'Desire was successfully destroyed.' }
+      format.html { redirect_to desires_url, notice: 'Запис з корзини успішно видалений.' }
       format.json { head :no_content }
     end
   end
