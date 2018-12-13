@@ -13,8 +13,8 @@
   <% end %>
   <div class="field">
     <%= form.label "ПІБ" %>
-    <%= form.text_field :full_name unless logged_in? %>
-    <%= form.text_field :full_name, value: current_user.name if logged_in? %>
+    <%= form.text_field :full_name unless logged_in? && !current_user.admin?%>
+    <%= form.text_field :full_name, value: current_user.name if logged_in? && !current_user.admin?%>
   </div>
 
   <div class="field">
@@ -29,8 +29,8 @@
 
   <div class="field">
     <%= form.label "Електронна пошта" %>
-    <%= form.text_field :email unless logged_in? %>
-    <%= form.text_field :email, value: current_user.email if logged_in? %>
+    <%= form.text_field :email unless logged_in? && !current_user.admin? %>
+    <%= form.text_field :email, value: current_user.email if logged_in? && !current_user.admin? %>
   </div>
 
   <div class="field">

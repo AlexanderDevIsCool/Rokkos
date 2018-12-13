@@ -1,8 +1,8 @@
-<h1>Editing Tag</h1>
+<h1>Редагування тегів</h1>
 
-Product: <%= @product.name %>
+Товар: <%= @product.name %>
 <% Tag.where(product_id: @product.id).each do |tag| %>
-  <br/>Tag: <%= tag.name %>
+  <br/>Теги: <%= tag.name %>
   <% unless tag.name.blank? %>
     <%= link_to 'Видалити', tag, method: :delete, data: { confirm: 'Ви впевнені?' } %>
     <% end %>
@@ -10,11 +10,10 @@ Product: <%= @product.name %>
 <br/>
 <%= form_for(:tag, :url => {:controller => 'tags', :action => 'update'},
              html:{method: 'PATCH'}) do |f| %>
-  Кількість:
   <%= text_area_tag(:tags)%>
   <%= hidden_field_tag(:product_id, @product.id)%>
   <%= f.submit("Редагувати", id: "edit-tag-btn", name: "edit-tag")%>
 
 <% end %>
 <br/>
-<%= link_to 'Back', tags_path %>
+<%= link_to 'Назад', tags_path %>

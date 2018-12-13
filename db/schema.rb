@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_02_154229) do
+ActiveRecord::Schema.define(version: 2018_12_13_093747) do
 
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 2018_12_02_154229) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.string "quantity"
-    t.string "sort_type"
     t.integer "p_rating", default: 0
     t.string "attachments"
   end
